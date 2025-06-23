@@ -747,6 +747,7 @@ archives
 arcio/fact-checker
 articles
 artists
+asset
 atari/images/public
 athletic*/?source=
 athletic*/boxscore
@@ -932,8 +933,6 @@ business/update
 business/verified-merchant/status
 buyside-e2e-monitor
 cai
-calendar
-calendar/about
 call
 call?id=
 calls
@@ -953,17 +952,14 @@ cbk
 cbre/built-for-performance
 cdn-cgi
 celebritycruises/guide-to-the-globe
-center
 cgi-bin
 cgibin
-chart?
 chat
 checkout
 checkout-external
 checkoutnow
 checkpoint
 christmas-spotlight
-chrome/browser/mobile/tour
 chrome/crlset
 chrome/webstore/images
 chwilio
@@ -978,8 +974,6 @@ citations?user=
 citations?view_op=new_profile
 citations?view_op=top_venues
 ck/
-cl2/feeds
-cl2/ical
 claim-money?
 classic-apps
 clickthru
@@ -1659,10 +1653,10 @@ hp/video
 hpc/*/supported-applications.aspx?
 hpm
 hpmob
-http://patreon.com/robots.txt
-http://paypal.com/robots.txt
-http://support.cloudflare.com/robots.txt
-http://w3.org/robots.txt
+http://blog.google/robots.txt
+http://dropbox.com/robots.txt
+http://ftc.gov/robots.txt
+http://ncbi.nlm.nih.gov/robots.txt
 hub?category=
 hz/contact-us/ajax/initiate-trusted-contact
 hz/help/contact/*/message/$
@@ -2459,6 +2453,8 @@ shop/
 shop/browse/overlay
 shop/collections
 shop/iphone/payments/overlay
+shop/productpage
+shop/topics
 shop/view/product
 shop?
 shop_pins
@@ -3457,7 +3453,7 @@ wiki/Wikipedia_Diskussion:Checkuser
 wiki/Wikipedia_Diskussion:Spam-Blacklist-Log
 wiki/Wikipedia_talk%3AAbuse_reports
 wiki/Wikipedia_talk%3AAbuse_response
-wiki/Wikipedia_talk%3AAdministrator_electionshttp://bit.ly/robots.txt
+wiki/Wikipedia_talk%3AAdministrator_electionshttp://goo.gl/robots.txt
 wiki/Wikipedia_talk%3AAdministrator_recall
 wiki/Wikipedia_talk%3AAdministrator_review
 wiki/Wikipedia_talk%3AAdministrators%27_noticeboard
