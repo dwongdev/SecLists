@@ -323,7 +323,6 @@ ghost/admin/mirage/routes-dev.js
 ghost/admin/mirage/routes-test.js
 ghost/admin/mirage/scenarios/default.js
 ghost/admin/mirage/models/post.js
-ghost/admin/mirage/models/custom-theme-setting.js
 ghost/admin/mirage/models/webhook.js
 ghost/admin/mirage/models/member-activity-event.js
 ghost/admin/mirage/models/config.js
@@ -373,7 +372,6 @@ ghost/admin/mirage/config/api-keys.js
 ghost/admin/mirage/config/authentication.js
 ghost/admin/mirage/config/invites.js
 ghost/admin/mirage/config/slugs.js
-ghost/admin/mirage/config/custom-theme-settings.js
 ghost/admin/mirage/config/pages.js
 ghost/admin/mirage/config/stats.js
 ghost/admin/mirage/config/offers.js
@@ -524,6 +522,7 @@ ghost/admin/tests/unit/transforms/facebook-url-user-test.js
 ghost/admin/tests/unit/transforms/navigation-settings-test.js
 ghost/admin/tests/unit/transforms/json-string-test.js
 ghost/admin/tests/unit/transforms/twitter-url-user-test.js
+ghost/admin/tests/unit/adapters/embedded-relation-adapter-test.js
 ghost/admin/tests/unit/routes/explore-test.js
 ghost/admin/tests/unit/routes/lexical-editor.new-test.js
 ghost/admin/tests/unit/.gitkeep
@@ -618,7 +617,6 @@ ghost/admin/app/services/onboarding.js
 ghost/admin/app/services/dashboard-stats.js
 ghost/admin/app/services/migrate.js
 ghost/admin/app/services/data-cache.js
-ghost/admin/app/services/custom-theme-settings.js
 ghost/admin/app/services/post-analytics.js
 ghost/admin/app/services/slug-generator.js
 ghost/admin/app/services/notifications.js
@@ -646,11 +644,9 @@ ghost/admin/app/mixins/validation-state.js
 ghost/admin/app/mixins/validation-engine.js
 ghost/admin/app/mixins/text-input.js
 ghost/admin/app/models/post.js
-ghost/admin/app/models/custom-theme-setting.js
 ghost/admin/app/models/webhook.js
 ghost/admin/app/models/member-tier.js
 ghost/admin/app/models/setting.js
-ghost/admin/app/models/custom-theme-setting-list.js
 ghost/admin/app/models/mention.js
 ghost/admin/app/models/member-subscription.js
 ghost/admin/app/models/action.js
@@ -729,7 +725,6 @@ ghost/admin/app/serializers/post.js
 ghost/admin/app/serializers/application.js
 ghost/admin/app/serializers/webhook.js
 ghost/admin/app/serializers/setting.js
-ghost/admin/app/serializers/custom-theme-setting-list.js
 ghost/admin/app/serializers/action.js
 ghost/admin/app/serializers/newsletter.js
 ghost/admin/app/serializers/snippet.js
@@ -791,7 +786,6 @@ ghost/admin/app/router.js
 ghost/admin/app/adapters/post.js
 ghost/admin/app/adapters/application.js
 ghost/admin/app/adapters/setting.js
-ghost/admin/app/adapters/custom-theme-setting-list.js
 ghost/admin/app/adapters/mention.js
 ghost/admin/app/adapters/newsletter.js
 ghost/admin/app/adapters/snippet.js
@@ -2713,6 +2707,12 @@ ghost/core/core/server/data/tinybird/endpoints/api_top_pages.pipe
 ghost/core/core/server/data/tinybird/endpoints/api_active_visitors.pipe
 ghost/core/core/server/data/tinybird/endpoints/api_top_devices.pipe
 ghost/core/core/server/data/tinybird/endpoints/api_top_browsers.pipe
+ghost/core/core/server/data/tinybird/scripts/database-utils.js
+ghost/core/core/server/data/tinybird/scripts/query-posts.sh
+ghost/core/core/server/data/tinybird/scripts/README.md
+ghost/core/core/server/data/tinybird/scripts/reset-data-tinybird.js
+ghost/core/core/server/data/tinybird/scripts/analytics-generator.js
+ghost/core/core/server/data/tinybird/scripts/query-members.sh
 ghost/core/core/server/data/schema/fixtures/FixtureManager.js
 ghost/core/core/server/data/schema/fixtures/index.js
 ghost/core/core/server/data/schema/fixtures/fixtures.json
@@ -3786,9 +3786,9 @@ ghost/core/test/unit/server/services/themes/validate.test.js
 ghost/core/test/unit/server/services/themes/list.test.js
 ghost/core/test/unit/server/services/themes/loader.test.js
 ghost/core/test/unit/server/services/explore-ping/ExplorePingService.test.js
+ghost/core/test/unit/server/services/stats/content.test.js
 ghost/core/test/unit/server/services/stats/referrers.test.js
 ghost/core/test/unit/server/services/stats/subscriptions.test.js
-ghost/core/test/unit/server/services/stats/content.test.js.js
 ghost/core/test/unit/server/services/stats/mrr.test.js
 ghost/core/test/unit/server/services/stats/utils/tinybird.test.js
 ghost/core/test/unit/server/services/stats/posts.test.js
@@ -4299,6 +4299,7 @@ apps/admin-x-framework/src/utils/api/handleResponse.ts
 apps/admin-x-framework/src/utils/api/hooks.ts
 apps/admin-x-framework/src/utils/api/fetchApi.ts
 apps/admin-x-framework/src/utils/api/updateQueries.ts
+apps/admin-x-framework/src/utils/post-helpers.ts
 apps/admin-x-framework/src/utils/source-utils.ts
 apps/admin-x-framework/src/api/activitypub.ts
 apps/admin-x-framework/src/api/integrations.ts
@@ -4441,6 +4442,8 @@ apps/stats/src/views/Stats/components/FeatureImagePlaceholder.tsx
 apps/stats/src/providers/GlobalDataProvider.tsx
 apps/stats/src/routes.tsx
 apps/stats/src/utils/chart-helpers.ts
+apps/stats/src/utils/content-helpers.ts
+apps/stats/src/utils/url-helpers.ts
 apps/stats/src/utils/constants.ts
 apps/stats/src/types/svg.d.ts
 apps/stats/src/types/kpi.ts
@@ -4448,10 +4451,10 @@ apps/stats/src/types/svg-maps.d.ts
 apps/stats/src/hooks/useLatestPostStats.ts
 apps/stats/src/hooks/useGrowthStats.ts
 apps/stats/src/hooks/useTopPostsStatsWithRange.ts
+apps/stats/src/hooks/useTopSourcesGrowth.ts
 apps/stats/src/hooks/useActiveVisitors.ts
 apps/stats/src/hooks/useNewsletterStatsWithRange.ts
 apps/stats/src/hooks/useFeatureFlag.tsx
-apps/stats/src/hooks/useReferrersGrowth.ts
 apps/stats/src/hooks/withFeatureFlag.tsx
 apps/stats/src/components/layout/index.ts
 apps/stats/src/components/layout/MainLayout.tsx
@@ -4471,9 +4474,12 @@ apps/stats/test/setup.ts
 apps/stats/test/.eslintrc.cjs
 apps/stats/test/acceptance/location.test.ts
 apps/stats/test/acceptance/stats.test.ts
-apps/stats/test/acceptance/pages/LocationsPage.ts
+apps/stats/test/acceptance/pages/GrowthTab.ts
 apps/stats/test/acceptance/pages/AnalyticsPage.ts
-apps/stats/test/acceptance/pages/OverviewPage.ts
+apps/stats/test/acceptance/pages/WebTrafficTab.ts
+apps/stats/test/acceptance/pages/LocationsTab.ts
+apps/stats/test/acceptance/pages/OverviewTab.ts
+apps/stats/test/acceptance/web-traffic.test.ts
 apps/stats/test/utils/test-helpers.ts
 apps/stats/test/utils/tinybird-helpers.ts
 apps/stats/test/unit/App.test.tsx
@@ -4838,8 +4844,11 @@ apps/shade/src/components/ui/popover.stories.tsx
 apps/shade/src/components/ui/flag.tsx
 apps/shade/src/components/ui/dropdown-menu.tsx
 apps/shade/src/components/ui/loading-indicator.tsx
+apps/shade/src/components/ui/navbar.stories.tsx
 apps/shade/src/components/ui/lucide-icon.stories.tsx
 apps/shade/src/components/ui/button.tsx
+apps/shade/src/components/ui/pagemenu.tsx
+apps/shade/src/components/ui/pagemenu.stories.tsx
 apps/shade/src/components/ui/popover.tsx
 apps/shade/src/components/ui/form.tsx
 apps/shade/src/components/ui/chart.stories.tsx
@@ -4848,6 +4857,7 @@ apps/shade/src/components/ui/label.tsx
 apps/shade/src/components/ui/badge.stories.tsx
 apps/shade/src/components/ui/sheet.tsx
 apps/shade/src/components/ui/avatar.stories.tsx
+apps/shade/src/components/ui/sheet.stories.tsx
 apps/shade/src/components/ui/dropdown-menu.stories.tsx
 apps/shade/src/components/ui/skeleton.tsx
 apps/shade/src/components/ui/chart.tsx
@@ -5209,6 +5219,7 @@ apps/posts/src/hooks/usePostReferrers.ts
 apps/posts/src/hooks/usePostSuccessModal.ts
 apps/posts/src/hooks/usePostFeedback.ts
 apps/posts/src/hooks/useEditLinks.ts
+apps/posts/src/hooks/useResponsiveChartSize.ts
 apps/posts/src/hooks/usePostNewsletterStats.ts
 apps/posts/src/hooks/useFeatureFlag.tsx
 apps/posts/src/hooks/withFeatureFlag.tsx
@@ -5268,6 +5279,7 @@ apps/admin-x-activitypub/src/views/Feed/Note.tsx
 apps/admin-x-activitypub/src/views/Feed/Feed.tsx
 apps/admin-x-activitypub/src/views/Feed/components/FeedList.tsx
 apps/admin-x-activitypub/src/views/Feed/components/FeedInput.tsx
+apps/admin-x-activitypub/src/views/Feed/components/SuggestedProfiles.tsx
 apps/admin-x-activitypub/src/routes.tsx
 apps/admin-x-activitypub/src/utils/get-username.ts
 apps/admin-x-activitypub/src/utils/content-handlers.ts
@@ -5387,6 +5399,7 @@ apps/admin-x-design-system/src/global/modal/ConfirmationModal.tsx
 apps/admin-x-design-system/src/global/modal/Modal.stories.tsx
 apps/admin-x-design-system/src/global/modal/LimitModal.tsx
 apps/admin-x-design-system/src/global/modal/ConfirmationModal.stories.tsx
+apps/admin-x-design-system/src/global/modal/LimitModal.stories.tsx
 apps/admin-x-design-system/src/global/modal/ModalPage.tsx
 apps/admin-x-design-system/src/global/modal/PreviewModal.stories.tsx
 apps/admin-x-design-system/src/global/modal/PreviewModal.tsx
