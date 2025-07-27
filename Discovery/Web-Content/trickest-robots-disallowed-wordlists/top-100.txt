@@ -369,10 +369,8 @@ $rpc/google.internal.maps.mapsjs.v1.MapsJsInternalService
 @me$
 AccountDisavow?
 ActivityUID=
-COG
 ClientAuth
 ClientLogin
-Coffeebreak
 Consortium/Offices/*/comments
 Consortium/Offices/*/feed
 Consortium/Offices/*/trackback
@@ -385,7 +383,6 @@ Consortium/supporters
 Disallow
 Doc
 EmbedSlideshow
-Entrez
 Explodingstuff
 Features/SpinaBifidaProgram/
 Fragment/SysConfig
@@ -394,7 +391,6 @@ Germany/kleinunternehmen/euga/results.mspx?
 GoogleInternetAuthority
 HpImageArchive.aspx
 HpOptOut=true$
-IEB/ToolBox/SB
 IntegrationCenter
 International/questions/qa-html-language-declarations/icons
 International/questions/qa-html-language-declarations/qa-html-language-declarations-data/icons
@@ -413,23 +409,13 @@ RDF/Validator/rdfval
 README.txt
 REST/auth/CSRFTicket
 ReportBug
-SAGE
-SNP
 Search
 Search/
 Search/Mail/Public
 ServiceDesks/
-Structure
-Structure/VA
-Structure/cblast/cblast.cgi
-Structure/dgs
-Structure/flink/flink.cgi
-Structure/vast/vastsrv.cgi
 Style/CSS/members.be
 Systems
 TOCLinksForCrawlers*
-Taxonomy/CommonTree
-Taxonomy/Selector
 Team
 TeamPresent
 TemplatePackage/3.0/Templates
@@ -793,7 +779,6 @@ bfp/search
 bin/search.go
 bin/search.py
 bing-site-safety
-biocollections/?term=
 bitesize/my
 bitesize/my$
 bitesize/search
@@ -801,8 +786,6 @@ bitesize/search$
 bitesize/search?
 bkshp?*q=
 blacklisted*
-blast/BlastAlign.cgi
-blast/bl2seq/wblast2.cgi
 blog
 blog/*&content-format=
 blog/*&event-format=
@@ -835,7 +818,6 @@ blogs/slow-ride
 blogs/test
 bookmarks
 books
-books/NBK
 books/about
 books/content?*zoom=1
 books/content?*zoom=5
@@ -912,7 +894,6 @@ classic-apps
 clickthru
 clima/ets
 clima/sites/registry
-clone/library/genomic/organisms
 cloud-launcher/sitemap
 cloudsourcetools/images
 cms_content
@@ -1175,11 +1156,6 @@ enterprise-partner-search/sitemaps
 entities/search
 entityexplore$
 entityexplore?
-entrez
-entrez/eutils
-entrez/sutils
-entrez/utils
-entrez/viewer.fcgi
 environment/ets
 erasmus-plus/404_en.htm
 err404.php
@@ -1356,9 +1332,6 @@ gb/images
 gcc
 gdpr-consent
 genuine/
-geo/browse
-geo/download
-geo/tools
 geolocation
 germany/library/images/mnp/
 germany/video/de/de/related*
@@ -1378,7 +1351,6 @@ gog
 google.internal.maps.gmpsdksbackend.v1.GmpSdksBackendService
 google.internal.maps.mapsjs.v1.MapsJsInternalService
 googlebooks/images
-gorf
 gp
 gp/aag
 gp/aag/main?*seller=ABVFEJU8LS620
@@ -1529,7 +1501,7 @@ hp/video
 hpc/*/supported-applications.aspx?
 hpm
 hpmob
-http://maps.app.goo.gl/robots.txt
+http://de.wikipedia.org/robots.txt
 hub?category=
 hz/contact-us/ajax/initiate-trusted-contact
 hz/help/contact/*/message/$
@@ -1675,7 +1647,6 @@ ko/solutions
 ko/upload
 l.php
 labs-code
-labs/pmc
 labs/popgadget/search
 lamda/images
 land-browse-bff
@@ -1762,7 +1733,6 @@ mac/help.mspx?
 macros
 mactopia/help.mspx?
 mail/$
-mailman
 main
 manage_playlist
 map_tile.php
@@ -1816,14 +1786,12 @@ maps?*output=classic
 mapslt?
 mapspro
 mapstt?
-mapview
 market_catalog/*?w=product-
 marketing-cms
 mats/?diagid=100001&eulaaccept=yes*
 mats/default.aspx?diagid=100001&eulaaccept=yes*
 mbox
 me
-medgen/?term=
 media
 media-manager
 meetup_api/?
@@ -1883,7 +1851,6 @@ my_favorites
 my_playlists
 my_videos
 my_videos_upload
-myncbi
 myprofile
 n
 narrative-
@@ -2001,25 +1968,6 @@ player
 plugins
 plugins/search
 plusinstall
-pmc/*.cgi
-pmc/*/bin
-pmc/*/equ
-pmc/*/pdf
-pmc/*page=
-pmc/*report=
-pmc/articlerender.fcgi
-pmc/articles
-pmc/articles/*/citedby
-pmc/issues
-pmc/ivip
-pmc/pagerender.fcgi
-pmc/picrender.fcgi
-pmc/publisherportal/api
-pmc/publisherportal/application
-pmc/publisherportal/download
-pmc/publisherportal/journalmanager
-pmc/tocrender.fcgi
-pmc/utilities
 pmo/contact/en/staff
 pmo/contact/fr/staff
 podcast*t=
@@ -2027,9 +1975,6 @@ podcasts/test-podcast/rss
 politics/e/sharing
 pools/c
 pools/campaign
-portal
-portal/portal3rc.fcgi/*/*.css
-portal/portal3rc.fcgi/*/*.js
 post_comment
 posttv-beta
 posttv/c/embed
@@ -2074,9 +2019,6 @@ profiles/*.svg
 profiles/me
 profinder
 profinder/pro
-projects/geo/download
-projects/geo/tools
-projects/gtr/gt
 proxy
 psb/udc
 psettings
@@ -2185,7 +2127,6 @@ s?
 safety
 safetycheck
 salary-explorer/api
-sars-cov-2
 scholar
 scholar_share
 scl
@@ -2203,7 +2144,6 @@ search-console/scfe
 search/
 search/*/grid
 search/?
-search/?term=
 search/about
 search/advanced
 search/default.aspx?*
@@ -2559,7 +2499,6 @@ slp/*/b$
 slp/s$
 smart/button
 smart/buttons
-snp
 social/photosui/images
 social/photosui/sitemap
 social/search?
@@ -2591,7 +2530,6 @@ ss/twister/ajax
 sslsingle
 stadia/gamers
 start
-stat
 static
 static/
 static/css
@@ -2672,7 +2610,6 @@ support/content
 support/forum/search?
 sureroute
 surprise
-sutils
 sv-se.www.cloudflare.com
 sv-se/feedback
 sv-se/lp
@@ -2905,7 +2842,6 @@ videos/trendingcontent
 videos?
 viewer
 viewlocale=zh_CN
-viewvc
 voyager/api
 vr
 vsi/*.pdf$
@@ -3236,7 +3172,7 @@ wiki/Wikipedia_Diskussion:Checkuser
 wiki/Wikipedia_Diskussion:Spam-Blacklist-Log
 wiki/Wikipedia_talk%3AAbuse_reports
 wiki/Wikipedia_talk%3AAbuse_response
-wiki/Wikipedia_talk%3AAdministrator_electionshttp://bit.ly/robots.txt
+wiki/Wikipedia_talk%3AAdministrator_electionshttp://accounts.google.com/robots.txt
 wiki/Wikipedia_talk%3AAdministrator_recall
 wiki/Wikipedia_talk%3AAdministrator_review
 wiki/Wikipedia_talk%3AAdministrators%27_noticeboard
