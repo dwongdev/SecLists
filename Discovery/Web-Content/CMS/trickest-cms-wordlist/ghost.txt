@@ -1846,6 +1846,7 @@ ghost/core/core/server/services/stats/ReferrersStatsService.js
 ghost/core/core/server/services/stats/StatsService.js
 ghost/core/core/server/services/stats/MrrStatsService.js
 ghost/core/core/server/services/stats/SubscriptionStatsService.js
+ghost/core/core/server/services/stats/utils/date-utils.js
 ghost/core/core/server/services/stats/utils/tinybird.js
 ghost/core/core/server/services/stats/index.js
 ghost/core/core/server/services/stats/PostsStatsService.js
@@ -5229,6 +5230,7 @@ apps/admin-x-activitypub/src/api/activitypub.test.ts
 apps/admin-x-activitypub/src/hooks/use-active-route.ts
 apps/admin-x-activitypub/src/hooks/use-keyboard-shortcuts.tsx
 apps/admin-x-activitypub/src/hooks/use-activity-pub-queries.ts
+apps/admin-x-activitypub/src/hooks/use-activity-pub-queries.test.ts
 apps/admin-x-activitypub/src/hooks/use-reply-chain-data.ts
 apps/admin-x-activitypub/src/components/global/EmptyViewIndicator.tsx
 apps/admin-x-activitypub/src/components/global/Separator.tsx
@@ -5643,5 +5645,4 @@ e2e/tsconfig.json
 e2e/.eslintrc.js
 .vscode/launch.json
 .vscode/settings.json
-PRIVACY.md
 .editorconfig

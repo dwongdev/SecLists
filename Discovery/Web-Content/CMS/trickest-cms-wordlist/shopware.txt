@@ -5764,11 +5764,13 @@ src/Core/Migration/V6_7/Migration1739197440ChangeCmsBlockDefaultMargin.php
 src/Core/Migration/V6_7/Migration1743064966CartConfigSubtotalTaxColumn.php
 src/Core/Migration/V6_7/Migration1752219159AddLanguageActive.php
 src/Core/Migration/V6_7/Migration1742484083TransitionToAddressInputFieldArrangement.php
+src/Core/Migration/V6_7/Migration1753799632FixStateMachineHistoryIntegrationConstraint.php
 src/Core/Migration/V6_7/Migration1742199550MeasurementDisplayUnitTable.php
 src/Core/Migration/V6_7/Migration1742568836CreateThemeRuntimeConfigTable.php
 src/Core/Migration/V6_7/Migration1728119898AddRobotsTxt.php
 src/Core/Migration/V6_7/Migration1737430168RemoveFileTypeOfDocumentTable.php
 src/Core/Migration/V6_7/Migration1740563553AddAppRequestedPrivileges.php
+src/Core/Migration/V6_7/Migration1753191228AddMediaThumbnailSizeIdToMediaThumbnail.php
 src/Core/Migration/V6_7/Migration1752499887UpdateAppRequestedPrivileges.php
 src/Core/Migration/V6_7/Migration1742199552SalesChannelMeasurementUnits.php
 src/Core/Migration/V6_7/Migration1742302302RenamePaidTransitionActions.php
@@ -12320,6 +12322,7 @@ src/Administration/Controller/AdminTagController.php
 src/Administration/Controller/NotificationController.php
 src/Administration/Controller/UserConfigController.php
 src/Administration/README.md
+src/Administration/Framework/App/Subscriber/SystemLanguageChangedSubscriber.php
 src/Administration/Framework/Marketing/Schema/general-campaign-types-1.0.xsd
 src/Administration/Framework/Twig/ViteFileAccessorDecorator.php
 src/Administration/Framework/Routing/AdministrationRouteScope.php
@@ -14189,6 +14192,7 @@ tests/integration/Administration/Controller/AdminSearchControllerTest.php
 tests/integration/Administration/Controller/AdminExtensionApiControllerTest.php
 tests/integration/Administration/Controller/AdministrationControllerTest.php
 tests/integration/Administration/Controller/AdminProductStreamControllerTest.php
+tests/integration/Administration/Framework/App/Subscriber/SystemLanguageChangedSubscriberTest.php
 tests/integration/Administration/Dashboard/OrderAmountServiceTest.php
 tests/integration/Administration/RateLimiter/RateLimiterTest.php
 tests/integration/Administration/Snippet/fixtures/caseBundleLoading/bundle/Resources/app/administration/en-GB.json
@@ -14228,6 +14232,7 @@ tests/migration/Core/V6_7/Migration1752229050ChangeDESnippetOfMeterUnitTest.php
 tests/migration/Core/V6_7/Migration1742199550MeasurementDisplayUnitTableTest.php
 tests/migration/Core/V6_7/Migration1746176773AddIntegrationIdStateHistoryTest.php
 tests/migration/Core/V6_7/Migration1720603803RemoveDefaultPaymentMethodRuleTest.php
+tests/migration/Core/V6_7/Migration1753799632FixStateMachineHistoryIntegrationConstraintTest.php
 tests/migration/Core/V6_7/Migration1749644517AddListingVariantNameSystemConfigOptionTest.php
 tests/migration/Core/V6_7/fixtures/import_export_default_profiles.sql
 tests/migration/Core/V6_7/Migration1743064966CartConfigSubtotalTaxColumnTest.php
@@ -14235,6 +14240,7 @@ tests/migration/Core/V6_7/Migration1733136208AddH1ToCmsCategoryListingTest.php
 tests/migration/Core/V6_7/Migration1742199552SalesChannelMeasurementUnitsTest.php
 tests/migration/Core/V6_7/Migration1739197440ChangeCmsBlockDefaultMarginTest.php
 tests/migration/Core/V6_7/Migration1745319883AddDefaultConfigForMeasurementSystemTest.php
+tests/migration/Core/V6_7/Migration1753191228AddMediaThumbnailSizeIdToMediaThumbnailTest.php
 tests/migration/Core/V6_7/Migration1740563553AddAppRequestedPrivilegesTest.php
 tests/migration/Core/V6_7/Migration1717572627RemoveImportExportProfileNameTest.php
 tests/migration/Core/V6_7/Migration1742568836CreateThemeRuntimeConfigTableTest.php
@@ -14471,6 +14477,7 @@ tests/unit/Core/Content/ProductExport/Service/ProductExportRendererTest.php
 tests/unit/Core/Content/ProductExport/Service/ProductExportGeneratorTest.php
 tests/unit/Core/Content/ProductExport/ProductExportExceptionTest.php
 tests/unit/Core/Content/Seo/SeoResolverTest.php
+tests/unit/Core/Content/Seo/SalesChannel/SeoResolverDataTest.php
 tests/unit/Core/Content/Seo/SalesChannel/StoreApiSeoResolverTest.php
 tests/unit/Core/Content/Seo/SalesChannel/MockSeoUrlAwareExtension.php
 tests/unit/Core/Content/Seo/SeoUrlUpdaterTest.php
@@ -15024,6 +15031,7 @@ tests/unit/Core/Checkout/Cart/Order/OrderPersisterTest.php
 tests/unit/Core/Checkout/Cart/Order/TestError.php
 tests/unit/Core/Checkout/Cart/Order/RecalculationServiceTest.php
 tests/unit/Core/Checkout/Cart/Order/CartTest.php
+tests/unit/Core/Checkout/Cart/Order/CartPersisterTest.php
 tests/unit/Core/Checkout/Cart/Order/RedisCartPersisterTest.php
 tests/unit/Core/Checkout/Cart/Order/ValidatorTest.php
 tests/unit/Core/Checkout/Cart/Order/Api/OrderConverterControllerTest.php
@@ -16367,6 +16375,7 @@ tests/unit/Administration/Controller/AdministrationControllerTest.php
 tests/unit/Administration/Controller/AdminProductStreamControllerTest.php
 tests/unit/Administration/Controller/DashboardControllerTest.php
 tests/unit/Administration/Controller/AdminTagControllerTest.php
+tests/unit/Administration/Framework/App/Subscriber/SystemLanguageChangedSubscriberTest.php
 tests/unit/Administration/Framework/Twig/ViteFileAccessorDecoratorTest.php
 tests/unit/Administration/Framework/Twig/Fixtures/TestBundle/Resources/public/administration/.vite/entrypoints.json
 tests/unit/Administration/Framework/Twig/Fixtures/TestBundle/Resources/public/administration/.vite/manifest.json
@@ -19358,6 +19367,7 @@ changelog/_unreleased/2025-05-19-bsfg-compliant-alt-tag-for-decorative-images.md
 changelog/_unreleased/2025-05-07-deprecated-theme-translations-to-use-admin-snippets.md
 changelog/_unreleased/2025-06-26-fix-media-item-quickinfo-update-after-save.md
 changelog/_unreleased/2025-07-14-restore-kernel-handle-resetinterface.md
+changelog/_unreleased/2025-07-29-fix-inconsistent-seourls-for-cross-selling-products.md
 changelog/_unreleased/2025-07-03-add-canonical-redirect-extension.md
 changelog/_unreleased/2025-06-16-allow-empty-alt-with-sw_thumbnails.md
 changelog/_unreleased/2024-07-16-remove-manual-override-for-state-machine.md
@@ -19369,8 +19379,12 @@ changelog/_unreleased/2025-06-15-fix-document-route-authentication.md
 changelog/_unreleased/2025-05-23-add-new-increment-api-to-delete-unused-keys-or-cluster.md
 changelog/_unreleased/2025-06-27-fix-document-number-customization.md
 changelog/_unreleased/2024-07-26-fix-variant-listing-config-when-cloning-products-or-deleting-variants.md
+changelog/_unreleased/2025-07-30-change-createdcomponent-back-to-being-sync.md
 changelog/_unreleased/2025-06-23-media-upload-api-v2.md
 changelog/_unreleased/2025-03-14-add-acl-hook-service.md
+changelog/_unreleased/2025-07-16-copy-app-snippets-after-system-language-change.md
+changelog/_unreleased/2025-07-25-use-sw-text-editor-instead-of-mt-text-editor.md
+changelog/_unreleased/2025-07-29-fix-primary-connection-is-not-working-when-replica-configured.md
 changelog/_unreleased/2025-01-04-add-an-explicit-configurable-robots-txt.md
 changelog/_unreleased/2025-07-22-allow-child-classes-for-getting-extension-of-type.md
 changelog/_unreleased/2025-06-27-cleanup-styles-of-the-sw-category-module.md
@@ -19379,6 +19393,7 @@ changelog/_unreleased/2025-07-17-add-missing-context-setting-optional-chaining.m
 changelog/_unreleased/2024-11-29-make-product-slider-defaults-accessible.md
 changelog/_unreleased/2025-04-01-ar-viewer-bug.md
 changelog/_unreleased/2025-07-02-multiple-promotions-order-count-fix.md
+changelog/_unreleased/2025-07-30-copy-context-rules-to-esi-request-context.md
 changelog/_unreleased/2025-05-22-fix-paging-listing-page-parameter-post.md
 changelog/_unreleased/2025-01-24-fix-negative-zero-when-calculating-price.md
 changelog/_unreleased/2024-04-25-implement-mt-banner-code-mod.md
@@ -19440,6 +19455,7 @@ changelog/_unreleased/2025-07-02-add-admin-product-number-filter.md
 changelog/_unreleased/2025-04-04-fix-product-media-import-with-whitespace-in-url.md
 changelog/_unreleased/2025-05-28-add-deprecations-to-the-theme-configuration-apis.md
 changelog/_unreleased/2025-06-06-skip-media-indexing-when-remote-thumbnails-are-enabled.md
+changelog/_unreleased/2025-07-30-add-custom-field-entities-to-apps.md
 changelog/_unreleased/2025-04-09-optimizing-theme-config-loading.md
 changelog/_unreleased/2025-07-11-refresh-measurement-units.md
 changelog/_unreleased/2025-06-23-add-search-sorting-for-live-search.md
@@ -19471,6 +19487,7 @@ changelog/_unreleased/2025-06-17-es-should-work-correctly-with-scorequery.md
 changelog/_unreleased/2025-03-25-fix-show-product-name-for-variants-in-admin-category-products.md
 changelog/_unreleased/2025-06-18-improve-app-uninstalls-with-custom-entities.md
 changelog/_unreleased/2025-04-14-truncate-long-custom-field-descriptions-in-rulebuilder.md
+changelog/_unreleased/2025-07-29-reset-active-apps-after-service-update.md
 changelog/_unreleased/2025-03-17-add-twig-block-around-filter-columns.md
 changelog/_unreleased/2025-06-05-products-with-variants-should-return-the-variant-that-match-the-search-term-in-the-product-detail-page.md
 changelog/_unreleased/2025-04-29-deprecated-carts-alerts.md
@@ -19494,6 +19511,7 @@ changelog/_unreleased/2025-05-09-remove-first-level-app-snippet-restriction.md
 changelog/_unreleased/2025-07-03-esi-url-instead-of-path.md
 changelog/_unreleased/2025-07-21-fix-reviews-not-activated.md
 changelog/_unreleased/2025-07-04-added-deduplicatablemessageinterface.md
+changelog/_unreleased/2025-07-29-fix-backward-compatibility-of-mediathumbnailentity.md
 changelog/_unreleased/2025-01-07-fix-gallery-thumbnail-slider.md
 changelog/_unreleased/2024-08-05-metrics-abstraction.md
 changelog/_unreleased/2024-05-22-navbar-for-main-navigation.md
@@ -19518,6 +19536,7 @@ changelog/_unreleased/2025-07-04-add-product-creation-date-sorting-criteria-opti
 changelog/_unreleased/2025-07-01-add-lock-for-cache-clearer.md
 changelog/_unreleased/2025-06-25-fix-after-sort-with-multiple-null-values.md
 changelog/_unreleased/2025-04-02-create-migration-and-dal-for-scale-unit.md
+changelog/_unreleased/2025-07-29-fix-state-machine-history-fk-constraint.md
 changelog/_unreleased/2025-07-03-add-missing-date-time-format-prop-for-sw-time-ago.md
 changelog/_unreleased/2025-05-28-add-convert-guest-route.md
 changelog/_unreleased/2025-07-03-removed-entity-hydrator-internal-class-tag.md
@@ -19535,9 +19554,11 @@ changelog/_unreleased/2025-06-28-fix-credit-note-order-version.md
 changelog/_unreleased/2024-09-13-deprecate-force-option-from-es-index-cleanup-command.md
 changelog/_unreleased/2025-07-12-implement-soft-purge-http-cache.md
 changelog/_unreleased/2025-07-24-skip-persisting-admin-snippets-for-non-existing-locales.md
+changelog/_unreleased/2025-07-21-min-search-term-is-now-configurable.md
 changelog/_unreleased/2025-07-21-fix-sidebar-sdk-handlers-sw-meteor-page.md
 changelog/_unreleased/2025-03-26-remove-non-existing-imports-from-admin-module-stub.md
 changelog/_unreleased/2025-07-15-added-locking-to-cart-mutating-routes.md
+changelog/_unreleased/2025-07-22-fix-media-thumbnail-sizes-with-media-thumbnail-size-id.md
 changelog/_unreleased/2025-07-03-use-created-at-for-product-list-sort.md
 changelog/_unreleased/2025-07-10-add-error-handling-to-youtube-cms-element-link-parsing.md
 changelog/_unreleased/2025-06-12-spatial-asset-caching.md
@@ -19561,11 +19582,13 @@ changelog/_unreleased/2025-06-02-added-es-response-to-searched-event.md
 changelog/_unreleased/2025-05-08-add-sw-settings-measurement-module.md
 changelog/_unreleased/2025-06-06-added-price-calculation-extension.md
 changelog/_unreleased/2024-01-31-improve-cart-page-performance.md
+changelog/_unreleased/2025-07-28-symfony-components-updated.md
 changelog/_unreleased/2025-06-11-improve-es-search-scoring-for-numeric-tokens.md
 changelog/_unreleased/2025-07-10-add-env-variables-for-opensearch-min_ngram-and-max_ngram.md
 changelog/_unreleased/2025-06-26-remove-usage-of-file_exists-in-admin.md
 changelog/_unreleased/2025-07-22-add-missing-cms-block-and-section-id-api-aware.md
 changelog/_unreleased/2025-07-24-fix-theme-lifecycle-service-refresh-themes-without-plugins.md
+changelog/_unreleased/2025-07-28-increased-minimum-required-version-of-mysql-database.md
 changelog/_unreleased/2025-06-10-fix-wrong-variant-of-mt-banner-on-sales-channel-detail-page.md
 changelog/_unreleased/2025-05-28-add-recalculated-custom-line-items-to-delivery.md
 changelog/release-6-4-17-0/2022-10-04-fix-storefront-presentation-sorting.md
