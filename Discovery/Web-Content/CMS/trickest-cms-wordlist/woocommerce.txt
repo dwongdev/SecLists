@@ -166,6 +166,7 @@ packages/php/email-editor/tests/unit/Integrations/Utils/Styles_Helper_Test.php
 packages/php/email-editor/tests/unit/Integrations/Utils/Dom_Document_Helper_Test.php
 packages/php/email-editor/tests/unit/stubs.php
 packages/php/email-editor/phpcs.xml
+packages/php/email-editor/changelog/wooplug-4598-no-horizontal-scrollbar-for-the-email-content-when-the
 packages/php/email-editor/changelog/.gitkeep
 packages/php/email-editor/SECURITY.md
 packages/php/email-editor/composer.json
@@ -3522,6 +3523,7 @@ packages/js/components/changelog/performance-47602-use-clx
 packages/js/components/changelog/56746-dev-webpack-deps-review
 packages/js/components/changelog/update-navigation-while-on-input
 packages/js/components/changelog/58263-remove-wp-core-data
+packages/js/components/changelog/fix-woopmnt-5217-linear-gradient-overlay-does-not-disappear-on-resize
 packages/js/components/changelog/dev-55910-deps-consolidation
 packages/js/components/changelog/52961-update-dompurify
 packages/js/components/changelog/fix-43256-tablecard-columns-popover
@@ -4789,6 +4791,7 @@ plugins/woocommerce/client/blocks/assets/js/base/components/product-list/product
 plugins/woocommerce/client/blocks/assets/js/base/components/product-list/container.tsx
 plugins/woocommerce/client/blocks/assets/js/base/components/product-list/style.scss
 plugins/woocommerce/client/blocks/assets/js/base/components/product-list/no-matching-products.tsx
+plugins/woocommerce/client/blocks/assets/js/base/components/delayed-content-with-skeleton/index.tsx
 plugins/woocommerce/client/blocks/assets/js/base/components/quantity-selector/index.tsx
 plugins/woocommerce/client/blocks/assets/js/base/components/quantity-selector/types.ts
 plugins/woocommerce/client/blocks/assets/js/base/components/quantity-selector/style.scss
@@ -6229,6 +6232,7 @@ plugins/woocommerce/client/blocks/assets/js/blocks/product-reviews/index.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/product-reviews/inner-blocks/review-form/editor.scss
 plugins/woocommerce/client/blocks/assets/js/blocks/product-reviews/inner-blocks/review-form/index.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/product-reviews/inner-blocks/review-form/edit.tsx
+plugins/woocommerce/client/blocks/assets/js/blocks/product-reviews/inner-blocks/review-form/frontend.ts
 plugins/woocommerce/client/blocks/assets/js/blocks/product-reviews/inner-blocks/review-form/block.json
 plugins/woocommerce/client/blocks/assets/js/blocks/product-reviews/inner-blocks/review-form/form.tsx
 plugins/woocommerce/client/blocks/assets/js/blocks/product-reviews/inner-blocks/review-form/style.scss
@@ -8236,7 +8240,9 @@ plugins/woocommerce/client/admin/client/marketplace/components/my-subscriptions/
 plugins/woocommerce/client/admin/client/marketplace/components/my-subscriptions/table/table-rows.tsx
 plugins/woocommerce/client/admin/client/marketplace/components/my-subscriptions/notices.tsx
 plugins/woocommerce/client/admin/client/marketplace/components/my-subscriptions/my-subscriptions.scss
+plugins/woocommerce/client/admin/client/marketplace/components/my-subscriptions/constants.ts
 plugins/woocommerce/client/admin/client/marketplace/components/my-subscriptions/subscriptions-expired-expiring-notice.tsx
+plugins/woocommerce/client/admin/client/marketplace/components/my-subscriptions/error-utils.ts
 plugins/woocommerce/client/admin/client/marketplace/components/discover/discover.scss
 plugins/woocommerce/client/admin/client/marketplace/components/discover/discover.tsx
 plugins/woocommerce/client/admin/client/marketplace/components/icon-with-text/icon-with-text.tsx
@@ -12243,6 +12249,7 @@ plugins/woocommerce/changelog/wooplug-5118-add-the-possibility-to-set-supported-
 plugins/woocommerce/changelog/wooplug-5090-custom-email-templates-in-theme-not-being-pulled-in
 plugins/woocommerce/changelog/60158-fix-wooplug-5231-incorrect-count-for-brands-through-the-wp
 plugins/woocommerce/changelog/60051-add-wccom-1647-get-installation-status-endpoint
+plugins/woocommerce/changelog/wooplug-4212-cart-checkout-blocks-update-the-look-and-feel-of-the-primary
 plugins/woocommerce/changelog/wooplug-4986-extract-next-prev-buttons
 plugins/woocommerce/changelog/60071-flaky-test-fix
 plugins/woocommerce/changelog/60176-fix-wooplug-5072-wpfooter-is-being-set-to-hidden-on-woo-admin-pages
@@ -12253,6 +12260,7 @@ plugins/woocommerce/changelog/fix-accessible-error-notices
 plugins/woocommerce/changelog/fix-59953
 plugins/woocommerce/changelog/skip-test_json_search_customers
 plugins/woocommerce/changelog/add-spacing-support-minicart
+plugins/woocommerce/changelog/fix-60305
 plugins/woocommerce/changelog/fix-email-e2e-test
 plugins/woocommerce/changelog/add-mobile-screens-lys
 plugins/woocommerce/changelog/migrator-shopify-count
@@ -12263,13 +12271,16 @@ plugins/woocommerce/changelog/feat-init-wc-migrator
 plugins/woocommerce/changelog/fix-59442-details-sku-variation-data
 plugins/woocommerce/changelog/60012-fix-issue-60011
 plugins/woocommerce/changelog/update-WOOPLUG-5208-dev-partner-extension-installations
+plugins/woocommerce/changelog/wooplug-5315-checkout-block-express-payment-components-unmount-when
 plugins/woocommerce/changelog/59843-migrator-test-fetcher
 plugins/woocommerce/changelog/add-carousel-scroll-indicator
+plugins/woocommerce/changelog/update-WOOPLUG-5298-activate-payments-dead-ends-prevention
 plugins/woocommerce/changelog/59967-fix-eslint-unit-test
 plugins/woocommerce/changelog/fix-add-to-cart-with-options-quantity-constraints
 plugins/woocommerce/changelog/59729-theme-37-woocommerce-store-notice-doesnt-show-up
 plugins/woocommerce/changelog/59803-feedback-59741
 plugins/woocommerce/changelog/60283-fix-wccom-1584
+plugins/woocommerce/changelog/wooplug-5289-phpunit-test-failure
 plugins/woocommerce/changelog/fix-add-to-cart-with-options-multiple-fixes
 plugins/woocommerce/changelog/wooplug-4916-register-url-param
 plugins/woocommerce/changelog/59778-feat-platform-registry
@@ -12277,6 +12288,7 @@ plugins/woocommerce/changelog/fix-remove-duplicate-quantity-filters
 plugins/woocommerce/changelog/wooplug-4740-spike-synchronize-shopsite-logo-into-email-template
 plugins/woocommerce/changelog/wooplug-4986-generic-block-i
 plugins/woocommerce/changelog/wooplug-5235-double-encoded-html-entities-in-woocommerce-blocks-shipping
+plugins/woocommerce/changelog/60213-feat-product-form-rating-selector-iapi
 plugins/woocommerce/changelog/update-batch-queue-flaky-tests
 plugins/woocommerce/changelog/59767-add-msw-package
 plugins/woocommerce/changelog/60144-wooplug-5236-editor-preview-filter-options-dont-show-in-hierarchical
@@ -12284,9 +12296,11 @@ plugins/woocommerce/changelog/wooplug-4921-add-filter-suffix-to-all-filter-block
 plugins/woocommerce/changelog/fix-59335-unify-attribute-options-iapi-stores
 plugins/woocommerce/changelog/60141-wooplug-5075-woo-may-be-incorrectly-tagging-a-returning-customer
 plugins/woocommerce/changelog/60265-enh-60120-aria-label-for-variation-dropdown
+plugins/woocommerce/changelog/fix-product-gallery-ghost-overflow
 plugins/woocommerce/changelog/fix-session-strict-types
 plugins/woocommerce/changelog/58700-wooplug-4457-rest-api-orders-get-with-coupons-has-typeerror-preg_match
 plugins/woocommerce/changelog/60127-add-entity-product-rating
+plugins/woocommerce/changelog/fix-php-unit-tests-role
 plugins/woocommerce/changelog/fix-large-image-404
 plugins/woocommerce/changelog/60152-add-fulfillments-documentation
 plugins/woocommerce/changelog/60124-fix-single-product-classnames
@@ -12315,12 +12329,16 @@ plugins/woocommerce/changelog/wooplug-4770-remove-feature-gate-for-taxonomy-filt
 plugins/woocommerce/changelog/remove-product-search-old-edit
 plugins/woocommerce/changelog/add-next-prev-arrows-rtl-support
 plugins/woocommerce/changelog/fix-set-up-payments-not-half-completed-when-onboarding-in-progress
+plugins/woocommerce/changelog/fix-WOOPLUG-5209-set-up-payments-completed-onboarding-unfinished
 plugins/woocommerce/changelog/wooprd-680-main-template-for-transactional-emails-has-white-background
 plugins/woocommerce/changelog/fix-add-to-cart-with-options-e2e-test-remove-aria-haspopup-check
 plugins/woocommerce/changelog/60076-wooplug-59960-hierarchical-term-ordering
 plugins/woocommerce/changelog/fix-product-gallery-inner-blocks-registration
+plugins/woocommerce/changelog/60207-update-WCCOM-1665-plugin-connection-error-notice
 plugins/woocommerce/changelog/59753-wooplug-5046-js-error-in-woocommerce-admin-settings-due-to-missing-class
 plugins/woocommerce/changelog/59898-wooplug-5021-remove-taxonomy-setting-in-favor-of-variations-and-transform
+plugins/woocommerce/changelog/fix-60226
+plugins/woocommerce/changelog/fix-taxonomy-filter-variation-name
 plugins/woocommerce/changelog/.gitkeep
 plugins/woocommerce/changelog/fix-aspect-ratio-product-gallery-2
 plugins/woocommerce/changelog/59780-feat-shopify-platform

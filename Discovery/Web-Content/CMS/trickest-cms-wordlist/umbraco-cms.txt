@@ -82,6 +82,7 @@ src/Umbraco.Web.UI.Client/src/libs/observable-api/utils/push-at-to-unique-array.
 src/Umbraco.Web.UI.Client/src/libs/observable-api/utils/simple-hash-code.function.ts
 src/Umbraco.Web.UI.Client/src/libs/observable-api/utils/create-observable-part.function.ts
 src/Umbraco.Web.UI.Client/src/libs/observable-api/utils/json-string-comparison.function.ts
+src/Umbraco.Web.UI.Client/src/libs/observable-api/utils/observation-as-promise.function.ts
 src/Umbraco.Web.UI.Client/src/libs/observable-api/utils/deep-freeze.function.ts
 src/Umbraco.Web.UI.Client/src/libs/observable-api/utils/class-equal-memoization.function.ts
 src/Umbraco.Web.UI.Client/src/libs/observable-api/utils/assign-to-frozen-object.function.ts
@@ -12935,6 +12936,7 @@ tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/RenderingContent/Renderin
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/RenderingContent/IPublishedContent.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/DefaultConfig/RenderingContent/RenderingContentWithMemberPicker.spec.ts
 tests/Umbraco.Tests.AcceptanceTest/tests/auth.setup.ts
+tests/Umbraco.Tests.AcceptanceTest/console-errors.json
 tests/Umbraco.Tests.AcceptanceTest/postinstall.js
 tests/Umbraco.Tests.AcceptanceTest/playwright.config.ts
 tests/Umbraco.Tests.AcceptanceTest/misc/Directory.Packages.props
@@ -13238,7 +13240,6 @@ tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Persistence/Repositories/
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Persistence/Repositories/RedirectUrlRepositoryTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Persistence/Repositories/ServerRegistrationRepositoryTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Persistence/Repositories/AuditRepositoryTest.cs
-tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Persistence/Repositories/SimilarNodeNameTests.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Persistence/Repositories/MemberTypeRepositoryTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Persistence/Repositories/CacheInstructionRepositoryTest.cs
 tests/Umbraco.Tests.Integration/Umbraco.Infrastructure/Persistence/Repositories/KeyValueRepositoryTests.cs
@@ -13503,6 +13504,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Core/Routing/GetContentUrlsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Routing/ContentFinderByUrlAliasTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Routing/ContentFinderByPageIdQueryTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Routing/DomainsAndCulturesTests.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Core/Routing/ContentFinderByUrlNewTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Routing/ContentFinderByUrlTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Routing/UrlsProviderWithDomainsTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Core/Routing/ContentFinderByUrlWithDomainsTests.cs
@@ -13612,6 +13614,7 @@ tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Querying/MediaT
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Querying/DataTypeDefinitionRepositorySqlClausesTest.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Querying/ContentTypeRepositorySqlClausesTest.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Querying/MediaRepositorySqlClausesTest.cs
+tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Repositories/SimilarNodeNameTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/BulkDataReaderTests.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Mappers/PropertyGroupMapperTest.cs
 tests/Umbraco.Tests.UnitTests/Umbraco.Infrastructure/Persistence/Mappers/ContentTypeMapperTest.cs
