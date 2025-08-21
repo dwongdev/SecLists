@@ -1447,6 +1447,11 @@ ghost/i18n/locales/ca/ghost.json
 ghost/i18n/locales/ca/search.json
 ghost/i18n/locales/ca/comments.json
 ghost/i18n/locales/ca/portal.json
+ghost/i18n/locales/eu/signup-form.json
+ghost/i18n/locales/eu/ghost.json
+ghost/i18n/locales/eu/search.json
+ghost/i18n/locales/eu/comments.json
+ghost/i18n/locales/eu/portal.json
 ghost/i18n/locales/bs/signup-form.json
 ghost/i18n/locales/bs/ghost.json
 ghost/i18n/locales/bs/search.json
@@ -5651,6 +5656,15 @@ e2e/tests/public/homepage.test.ts
 e2e/tests/admin/.keep
 e2e/tests/.eslintrc.js
 e2e/tsconfig.json
+e2e/data-factory/factories/factory.ts
+e2e/data-factory/factories/posts/post-factory.ts
+e2e/data-factory/index.ts
+e2e/data-factory/README.md
+e2e/data-factory/tests/post-factory.test.ts
+e2e/data-factory/.env.example
+e2e/data-factory/persistence/adapters/knex.ts
+e2e/data-factory/persistence/adapter.ts
+e2e/data-factory/utils.ts
 e2e/.eslintrc.js
 .vscode/launch.json
 .vscode/settings.json
